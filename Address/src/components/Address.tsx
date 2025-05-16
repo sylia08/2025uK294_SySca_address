@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AddressService, type Address } from "./Service/AddressService";
 import { useParams } from "react-router-dom";
-import { Formik, Field, Form, ErrorMessage } from "formik";
 
 const Address: React.FC = () => {
   const [address, setAddress] = useState<Address | null>(null);
@@ -9,18 +8,10 @@ const Address: React.FC = () => {
   const [error, setError] = useState("");
   let { id } = useParams();
 
-  interface EditingValues {
-    street_number: number;
-    street_name: string;
-    city: string;
-    country_id: number;
-    importdate: string;
-  }
-
   useEffect(() => {
     const fetchOneAddress = async () => {
       try {
-        const result = await AddressService.getOneAddress();
+        const result = await AddressService.getOneAddress(id);
         setAddress(result);
       } catch (err: unknown) {
         if (err instanceof Error) {
@@ -60,32 +51,29 @@ const Address: React.FC = () => {
 
   return (
     <>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <ErrorMessage name="email" component="div" className="error" />
-          <div className="Street" key={address.id}>
-            <p className="desc">Street:</p>
-            <Field className="field">{address.street_name}</Field>
+      <div className="AddressList">
+        <div className="Street" key={address.id}>
+          <p className="desc">Street:</p>
+          <p className="field">{address.street_name}</p>
 
-            <p className="desc">Street Nr.:</p>
-            <Field className="field">{address.street_number}</Field>
+          <p className="desc">Street Nr.:</p>
+          <p className="field">{address.street_number}</p>
 
-            <p className="desc">City:</p>
-            <Field className="field">{address.city}</Field>
+          <p className="desc">City:</p>
+          <p className="field">{address.city}</p>
 
-            <p className="desc">Country:</p>
-            <Field className="field">{address.country_id}</Field>
+          <p className="desc">Country:</p>
+          <p className="field">{address.country_id}</p>
 
-            <p className="desc">Imported:</p>
-            <Field className="field">
-              {new Date(address.importdate).toLocaleDateString()}
-              {new Date(address.importdate).toLocaleTimeString()}
-            </Field>
-          </div>
-        </Form>
-      </Formik>
-      <button>Edit</button>
-      <button onClick={() => deleteAddress(address.id)}>Delete</button>
+          <p className="desc">Imported:</p>
+          <p className="field">
+            {new Date(address.importdate).toLocaleDateString()}
+            {new Date(address.importdate).toLocaleTimeString()}
+          </p>
+          <button>Edit</button>
+          <button onClick={deleteAddress}>Delete</button>
+        </div>
+      </div>
     </>
   );
 };

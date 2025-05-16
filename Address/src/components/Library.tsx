@@ -82,7 +82,6 @@ const AddressLibrary: React.FC = () => {
               <p className="date">
                 {new Date(address.importdate).toLocaleDateString()}
               </p>
-              <button className="">Edit</button>
               <button onClick={() => deleteAddress(address.id)}>Delete</button>
             </div>
           </button>

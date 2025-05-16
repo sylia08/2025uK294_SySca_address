@@ -19,3 +19,36 @@
     }
     return error;
   }
+
+  
+    export function validateOnlyText (value: string){
+    let error;
+    if (!value){
+        error= "***Required***";
+    } else if (!/^[A-Za-zÀ-ÿ' -]+$/i.test(value)){
+        error= "**No Numbers or ordinary Characters allowed write them out!***";
+    }
+    return error;
+  }
+
+      export function validateNumber (value: string){
+    let error;
+    if (!value){
+        error= "***Required***";
+    } else if (!/^\d+$$/i.test(value)){
+        error= "**Only Numbers are Allowed!***";
+    }
+    return error;
+  }
+
+       export function validateCountry (value: string){
+    let error;
+    if (!value){
+        error= "***Required***";
+    } else if (!/^\d+$$/i.test(value) ){
+        error= "**Only Numbers are Allowed!***";
+    }else if ( value.length < 1&& value.length > 233){
+      error= "**Not an CountryID!***";
+    }
+    return error;
+  }
