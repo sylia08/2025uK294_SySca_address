@@ -1,0 +1,81 @@
+:root{
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+    height: 100vh;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Street{
+    background-color: #5e1f5e;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+
+     display: flex;
+   flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+ width: 800px; 
+ height: 300px;
+
+}
+
+.Line{
+         display: flex;
+   flex-direction: row;
+  width: 90%;
+max-width: 800px;;
+
+}
+
+  .desc {
+    color: white;
+    padding-right: 0px;
+    font-style: italic;
+    align-self: start;
+}
+
+
+.field{
+      background-color:  #90518e !important;
+      border-radius: 20px;
+      width: 40%;
+      padding: 5px 15px;
+}
+.Nr{
+    align-self: start;
+    padding-left: 20px;
+}
+
+
+.error{
+  color: rgb(246, 244, 244);
+  font-style: italic;
+ font-size: small;
+}
+
+
+button {
+      border-radius: 100px;
+      width: 10%;
+      height: 50%;
+      padding: 5px 5px;
+      margin: 13px 5px;
+}
+
+button:hover {
+  background-color: #666;
+}
