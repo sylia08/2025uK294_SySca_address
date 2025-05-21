@@ -9,16 +9,9 @@ export interface Address {
   importdate: string;
 }
 
-<<<<<<< Updated upstream
-export const AddressService ={
-        getAddress: async (): Promise<Address[]> =>{
-        const data = await defaultAxiosInstance.get("/address");
-        return data.data;
-    },
-=======
 export const AddressService = {
   getAddress: async (): Promise<Address[]> => {
-    const data = await defaultAxiosInstance.get<Address[]>("address");
+    const data = await defaultAxiosInstance.get("/address");
     return data.data;
   },
 
@@ -26,7 +19,6 @@ export const AddressService = {
     const data = await defaultAxiosInstance.get(`address/${id}`);
     return data.data;
   },
->>>>>>> Stashed changes
 
   deleteAddress: async (id: number): Promise<{ message: string } | void> => {
     const data = await defaultAxiosInstance.delete(`address/${id}`);
