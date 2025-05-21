@@ -1,5 +1,5 @@
-:root{
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -12,68 +12,90 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-    height: 100vh;
-   display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  overflow-y: auto;
 }
 
-.Street{
-    background-color: #5e1f5e;
-    border-radius: 20px;
-    margin: 10px;
-    padding: 10px;
-
-     display: flex;
-   flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
- width: 800px; 
- height: 300px;
-
+.Library {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.Line{
-         display: flex;
-   flex-direction: row;
-  width: 90%;
-max-width: 800px;;
+.Street {
+  background-color: #5e1f5e;
+  border-radius: 20px;
+  margin: 10px 0;
+  padding: 20px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-  .desc {
-    color: white;
-    padding-right: 0px;
-    font-style: italic;
-    align-self: start;
+.Line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
 }
 
-
-.field{
-      background-color:  #90518e !important;
-      border-radius: 20px;
-      width: 40%;
-      padding: 5px 15px;
-}
-.Nr{
-    align-self: start;
-    padding-left: 20px;
+.desc {
+  color: white;
+  font-style: italic;
+  flex: 1;
 }
 
+.field {
+  background-color: #90518e !important;
+  border-radius: 20px;
+  padding: 5px 15px;
+  flex: 2;
+  color: white;
+  box-sizing: border-box;
+}
+.Nr {
+  padding-left: 20px;
+  align-self: flex-start;
+  font-weight: bold;
+}
 
-.error{
+.error {
   color: rgb(246, 244, 244);
   font-style: italic;
- font-size: small;
+  font-size: small;
+  margin-top: 5px;
 }
 
-
 button {
-      border-radius: 100px;
-      width: 10%;
-      height: 50%;
-      padding: 5px 5px;
-      margin: 13px 5px;
+  border-radius: 100px;
+  width: auto;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
