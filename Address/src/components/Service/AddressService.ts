@@ -9,20 +9,11 @@ export interface Address {
   importdate: string;
 }
 
-<<<<<<< HEAD
-
-export const AddressService ={
-        getAddress: async (): Promise<Address[]> =>{
-        const data = await defaultAxiosInstance.get("/address");
-        return data.data;
-    },
-=======
 export const AddressService = {
   getAddress: async (): Promise<Address[]> => {
     const data = await defaultAxiosInstance.get("/address");
     return data.data;
   },
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
 
   getOneAddress: async (id: number): Promise<Address> => {
     const data = await defaultAxiosInstance.get(`address/${id}`);

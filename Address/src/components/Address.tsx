@@ -3,10 +3,7 @@ import "./Address.css";
 import { AddressService, type Address } from "./Service/AddressService";
 import { useParams } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-<<<<<<< HEAD
-=======
 import { useNavigate } from "react-router-dom";
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
 import {
   validateOnlyText,
   validateNumber,
@@ -18,11 +15,7 @@ const Address: React.FC = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [error, setError] = useState("");
   const { id } = useParams();
-<<<<<<< HEAD
-=======
   const navigate = useNavigate();
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
-
   useEffect(() => {
     const fetchOneAddress = async () => {
       try {
@@ -80,30 +73,11 @@ const Address: React.FC = () => {
   if (!address) return <div>Loading...</div>;
 
   const prefilledData = {
-<<<<<<< HEAD
-=======
     id: address.id,
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
     street_name: address.street_name || "",
     street_number: address.street_number || "",
     city: address.city,
     country_id: address.country_id || "",
-<<<<<<< HEAD
-  };
-
-  return (
-    <>
-      <Formik
-        initialValues={prefilledData}
-        onSubmit={(values) => console.log("Success", values)}
-        enableReinitialize={true}
-      >
-        <Form className="Street" key={address.id}>
-          <p className="desc">Street:</p>
-          <Field
-            className="field"
-=======
-    importdate: address.importdate,
   };
 
   return (
@@ -118,17 +92,11 @@ const Address: React.FC = () => {
           <p className="desc2">Street:</p>
           <Field
             className="editor"
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
             name="street_name"
             validate={validateOnlyText}
             required
           ></Field>
 
-<<<<<<< HEAD
-          <p className="desc">Street Nr.:</p>
-          <Field
-            className="field"
-=======
           <ErrorMessage
             name="street_number"
             component="div"
@@ -137,52 +105,28 @@ const Address: React.FC = () => {
           <p className="desc2">Street Nr.:</p>
           <Field
             className="editor"
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
             name="street_number"
             validate={validateNumber}
             required
           ></Field>
 
-<<<<<<< HEAD
-          <p className="desc">City:</p>
-          <Field
-            className="field"
-=======
           <ErrorMessage name="city" component="div" className="error" />
           <p className="desc2">City:</p>
           <Field
             className="editor"
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
             name="city"
             validate={validateOnlyText}
             required
           ></Field>
-
-<<<<<<< HEAD
-          <p className="desc">Country:</p>
-          <Field
-            className="field"
-=======
           <ErrorMessage name="country_id" component="div" className="error" />
           <p className="desc2">Country:</p>
           <Field
             className="editor"
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
             name="country_id"
             validate={validateCountry}
             required
           ></Field>
 
-<<<<<<< HEAD
-          <p className="desc">Imported:</p>
-          <label className="field">
-            {new Date(address.importdate).toLocaleDateString()}
-          </label>
-        </Form>
-      </Formik>
-      <button onClick={() => deleteAddress(address.id)}>Delete</button>
-    </>
-=======
           <p className="desc2">Imported:</p>
           <label className="editor">
             {new Date(address.importdate).toLocaleDateString()}
@@ -197,7 +141,6 @@ const Address: React.FC = () => {
       </button>
       <button onClick={() => navigate(-1)}>Home</button>
     </div>
->>>>>>> 7ed20554625580952f8045fcc803af5d42340dc6
   );
 };
 
