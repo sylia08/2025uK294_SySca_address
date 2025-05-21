@@ -36,7 +36,10 @@ export const AddressService = {
     id: number,
     updatedData: Partial<Address>
   ): Promise<Address> => {
-    const data = await defaultAxiosInstance.put(`address/${id}`, updatedData);
+    const data = await defaultAxiosInstance.put<Address>(
+      `address/${id}`,
+      updatedData
+    );
     return data.data;
   },
 };
