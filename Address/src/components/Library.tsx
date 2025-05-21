@@ -10,7 +10,7 @@ const AddressLibrary: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchAddress = async () => {
+    const fetchAddresses = async () => {
       try {
         const result = await AddressService.getAddress();
         setAddress(result);
@@ -22,7 +22,7 @@ const AddressLibrary: React.FC = () => {
         }
       }
     };
-    fetchAddress();
+    fetchAddresses();
   }, []);
 
   const deleteAddress = async (id: number) => {
