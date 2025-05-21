@@ -4,14 +4,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import AddressLibrary from "./components/Library";
 import Address from "./components/Address";
+import Create from "./components/Creat";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/address" element={<AddressLibrary />} />
-        <Route path="/address/:id" element={<Address />} />
+        <Route path="address" element={<AddressLibrary />} />
+        <Route path="address/:id" element={<Address />} />
+        <Route path="address/create" element={<Create />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

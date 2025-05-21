@@ -51,6 +51,7 @@ const AddressLibrary: React.FC = () => {
 
   return (
     <>
+      <button onClick={() => navigate(`create`)}>Creat</button>
       <div className="AddressList">
         {address.map((address) => (
           <button

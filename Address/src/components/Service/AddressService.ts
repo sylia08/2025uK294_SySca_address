@@ -16,19 +16,17 @@ export const AddressService = {
   },
 
   getOneAddress: async (id: number): Promise<Address> => {
-    const data = await defaultAxiosInstance.get(`address/${id}`);
+    const data = await defaultAxiosInstance.get(`/address/${id}`);
     return data.data;
   },
 
   deleteAddress: async (id: number): Promise<{ message: string } | void> => {
-    const data = await defaultAxiosInstance.delete(`address/${id}`);
+    const data = await defaultAxiosInstance.delete(`/address/${id}`);
     return data.data;
   },
 
-  createAddress: async (
-    newAddress: Omit<Address, "id" | "importdate">
-  ): Promise<Address> => {
-    const data = await defaultAxiosInstance.post(`address`, newAddress);
+  createAddress: async (newAddress: Omit<Address, "id">): Promise<Address> => {
+    const data = await defaultAxiosInstance.post(`/address`, newAddress);
     return data.data;
   },
 
@@ -36,10 +34,7 @@ export const AddressService = {
     id: number,
     updatedData: Partial<Address>
   ): Promise<Address> => {
-    const data = await defaultAxiosInstance.put<Address>(
-      `address/${id}`,
-      updatedData
-    );
+    const data = await defaultAxiosInstance.put(`/address/${id}`, updatedData);
     return data.data;
   },
 };
