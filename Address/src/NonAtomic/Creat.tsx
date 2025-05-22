@@ -4,8 +4,8 @@ import {
   validateOnlyText,
   validateNumber,
   validateCountry,
-} from "./validation";
-import { AddressService, type Address } from "./Service/AddressService";
+} from "../validtions/validation";
+import { AddressService, type Address } from "../service/AddressService";
 
 const Create: React.FC = () => {
   const navigate = useNavigate();

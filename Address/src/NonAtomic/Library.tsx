@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AddressService, type Address } from "./Service/AddressService";
+import { AddressService, type Address } from "../service/AddressService";
 import "./Address.css";
 import { useNavigate } from "react-router-dom";
 

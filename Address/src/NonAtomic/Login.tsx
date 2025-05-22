@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import { validateEmail, validatePassword } from "./validation";
-import { AuthService } from "./Service/AuthService";
+import { validateEmail, validatePassword } from "../validtions/validation";
+import { AuthService } from "../service/AuthService";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 

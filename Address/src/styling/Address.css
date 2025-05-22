@@ -54,16 +54,9 @@ body {
 
 .Line {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: 100%;
-}
 
-.desc {
-  color: white;
-  font-style: italic;
-  flex: 1;
+  justify-content: baseline;
+  width: 100%;
 }
 
 .field {
@@ -81,7 +74,7 @@ body {
 }
 
 .error {
-  color: rgb(246, 244, 244);
+  color: rgb(255, 11, 11);
   font-style: italic;
   font-size: small;
   margin-top: 5px;
@@ -92,7 +85,7 @@ button {
   width: auto;
   padding: 10px 20px;
   margin: 10px 5px;
-  background-color: #444;
+  background-color: #90518e;
   color: white;
   border: none;
   cursor: pointer;
@@ -100,4 +93,10 @@ button {
 
 button:hover {
   background-color: #666;
+}
+
+.label {
+  color: white;
+  font-style: italic;
+  flex: 1;
 }

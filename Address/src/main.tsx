@@ -1,10 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import AddressLibrary from "./components/Library";
-import Address from "./components/Address";
-import Create from "./components/Creat";
+import Login from "./components/Pages/LoginPage";
+import AddressLibrary from "./components/Pages/LibraryPage";
+import AddressPage from "./components/Pages/AddressPage";
+import Create from "./components/Pages/CreatePage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="address" element={<AddressLibrary />} />
-        <Route path="address/:id" element={<Address />} />
+        <Route path="address/:id" element={<AddressPage />} />
         <Route path="address/create" element={<Create />} />
       </Routes>
     </BrowserRouter>
