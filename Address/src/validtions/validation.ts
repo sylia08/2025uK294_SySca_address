@@ -41,11 +41,16 @@ export function validateNumber(value: string) {
 }
 
 export function validateCountry(value: string) {
+  const num = Number(value);
   let error;
   if (!value) {
     error = "***Required***";
-  } else if (!/^\d+$$/i.test(value) || value.length < 1 || value.length > 233) {
-    error = "**Only Numbers are Allowed!***";
+  }
+  if (isNaN(num)) {
+    return "***Only Numbers***";
+  }
+  if (num < 1 || num > 232) {
+    return "***Only Country Id (1-232)***";
   }
   return error;
 }
