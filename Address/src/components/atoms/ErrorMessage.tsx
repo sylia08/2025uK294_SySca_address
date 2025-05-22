@@ -7,7 +7,7 @@ interface ErrorProps {
 }
 
 const ErrorMessage: React.FC<ErrorProps> = ({ name }) => (
-  <FormikErrorMessage name={name} component="div" className="error" />
+  <FormikErrorMessage name={name} component="p" className="error" />
 );
 
 export default ErrorMessage;
