@@ -46,7 +46,7 @@ const AddressPage = () => {
 
   if (isDeleted)
     return (
-      <div>
+      <div className="page">
         Address deleted. <button onClick={() => navigate(-1)}>Back</button>
       </div>
     );

@@ -7,9 +7,8 @@ interface DeleteInfoProps {
 }
 
 const DeleteInfo: React.FC<DeleteInfoProps> = ({ importedDate, onDelete }) => (
-  <div className="Line">
-    <p className="desc">Imported:</p>
-    <p className="date">{importedDate}</p>
+  <div className="line">
+    <p className="desc">Imported: {importedDate}</p>
     <Button onClick={onDelete}>Delete</Button>
   </div>
 );

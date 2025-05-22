@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AddressService, type Address } from "../../service/AddressService";
 import AddressList from "../Organisms/AddressList";
 import Button from "../atoms/Button";
-
+import "../../styling/Address.css";
 const AddressLibrary: React.FC = () => {
   const [addresses, setAddresses] = useState<Address[]>([]);
   const [error, setError] = useState("");
@@ -45,21 +45,23 @@ const AddressLibrary: React.FC = () => {
     );
 
   return (
-    <>
-      <Button onClick={() => navigate(`create`)}>Create</Button>
-      <Button
-        onClick={() => (
-          localStorage.removeItem("accessToken"), (window.location.href = "/")
-        )}
-      >
-        Logout
-      </Button>
+    <div className="page">
+      <div className="line">
+        <Button onClick={() => navigate(`create`)}>Create</Button>
+        <Button
+          onClick={() => (
+            localStorage.removeItem("accessToken"), (window.location.href = "/")
+          )}
+        >
+          Logout
+        </Button>
+      </div>
       <AddressList
         addresses={addresses}
         onDelete={deleteAddress}
         onNavigate={(id) => navigate(`/address/${id}`)}
       />
-    </>
+    </div>
   );
 };
 

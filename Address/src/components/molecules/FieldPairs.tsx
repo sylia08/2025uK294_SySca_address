@@ -9,15 +9,10 @@ interface FieldPairProps {
   valueClassName?: string;
 }
 
-const FieldPair: React.FC<FieldPairProps> = ({
-  label,
-  value,
-  labelClassName,
-  valueClassName,
-}) => (
-  <div className="Line">
-    <Label className={labelClassName}>{label}</Label>
-    <Text className={valueClassName}>{value}</Text>
+const FieldPair: React.FC<FieldPairProps> = ({ label, value }) => (
+  <div className="line">
+    <Label className="label">{label}</Label>
+    <Text className="value">{value}</Text>
   </div>
 );
 

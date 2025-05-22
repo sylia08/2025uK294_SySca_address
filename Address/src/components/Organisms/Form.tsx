@@ -9,7 +9,7 @@ import {
 
 const AddressForm = ({ initialValues, onSubmit }: any) => (
   <Formik initialValues={initialValues} onSubmit={onSubmit} enableReinitialize>
-    <Form className="Street">
+    <Form className="form">
       <InputField
         name="street_name"
         label="Street"

@@ -60,7 +60,7 @@ const AddressLibrary: React.FC = () => {
             onClick={() => navigate(`/address/${address.id}`)}
           >
             <p className="Nr">Nr. {address.id}</p>
-            <div className="Line">
+            <div className="line">
               <p className="desc">Street:</p>
               <p className="field">{address.street_name}</p>
 
@@ -68,17 +68,17 @@ const AddressLibrary: React.FC = () => {
               <p className="field">{address.street_number}</p>
             </div>
 
-            <div className="Line">
+            <div className="line">
               <p className="desc">City: </p>
               <p className="field">{address.city}</p>
             </div>
 
-            <div className="Line">
+            <div className="line">
               <p className="desc">Country:</p>
               <p className="field">{address.country_id}</p>
             </div>
 
-            <div className="Line">
+            <div className="line">
               <p className="desc">Imported:</p>
               <p className="date">
                 {new Date(address.importdate).toLocaleDateString()}

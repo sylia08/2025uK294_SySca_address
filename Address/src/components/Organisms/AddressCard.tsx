@@ -17,13 +17,7 @@ const AddressCard: React.FC<AddressCardProps> = ({
   const importedDate = new Date(address.importdate).toLocaleDateString();
 
   return (
-    <div
-      className="Street"
-      onClick={() => onNavigate(address.id)}
-      role="button"
-      tabIndex={0}
-      style={{ cursor: "pointer" }}
-    >
+    <div className="Street" onClick={() => onNavigate(address.id)}>
       <FieldPair label="Nr." value={address.id} labelClassName="Nr" />
       <FieldPair label="Street:" value={address.street_name} />
       <FieldPair label="Street Nr.:" value={address.street_number} />
