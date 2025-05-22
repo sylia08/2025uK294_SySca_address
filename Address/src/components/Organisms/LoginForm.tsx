@@ -39,7 +39,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
           className="Pwd"
         />
         <Button type="submit" className="Submit">
-          Login
+          Submit
         </Button>
       </Form>
     </Formik>

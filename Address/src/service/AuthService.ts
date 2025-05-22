@@ -9,3 +9,13 @@ export const AuthService = {
     return response.data;
   },
 };
+
+export const Registration = {
+  register: async (email: string, password: string) => {
+    const response = await defaultAxiosInstance.post("/register", {
+      email,
+      password,
+    });
+    return response.data;
+  },
+};

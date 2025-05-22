@@ -5,12 +5,14 @@ import Login from "./components/Pages/LoginPage";
 import AddressLibrary from "./components/Pages/LibraryPage";
 import AddressPage from "./components/Pages/AddressPage";
 import Create from "./components/Pages/CreatePage";
+import Register from "./components/Pages/RegisterPage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="address" element={<AddressLibrary />} />
         <Route path="address/:id" element={<AddressPage />} />
         <Route path="address/create" element={<Create />} />

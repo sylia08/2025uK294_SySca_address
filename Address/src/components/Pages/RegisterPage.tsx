@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 import LoginForm from "../Organisms/LoginForm";
-import { AuthService } from "../../service/AuthService";
+import { Registration } from "../../service/AuthService";
 import { useNavigate } from "react-router-dom";
 import "../../styling/Login.css";
 
-interface LoginFormValues {
+interface RegisterFormValues {
   email: string;
   password: string;
 }
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const navigate = useNavigate();
   const [apiError, setApiError] = useState("");
 
-  const initialValues: LoginFormValues = {
+  const initialValues: RegisterFormValues = {
     email: "",
     password: "",
   };
 
-  const handleSubmit = async (values: LoginFormValues) => {
+  const handleSubmit = async (values: RegisterFormValues) => {
     try {
-      const result = await AuthService.login(values.email, values.password);
+      const result = await Registration.register(values.email, values.password);
       localStorage.setItem("accessToken", result.accessToken);
       navigate("/address");
     } catch (error: unknown) {
       if (error instanceof Error) {
         setApiError(error.message);
       } else {
-        setApiError("Login failed");
+        setApiError("Regestry failed");
       }
     }
   };
@@ -35,18 +35,15 @@ const Login: React.FC = () => {
   return (
     <>
       <div className="Login">
-        <h1>Login</h1>
+        <h1>Register</h1>
         <LoginForm
           initialValues={initialValues}
           onSubmit={handleSubmit}
           apiError={apiError}
         />
       </div>
-      <a href="http://localhost:5174/register" className="RegisterLink">
-        Don’t have an account yet? Register here
-      </a>
     </>
   );
 };
 
-export default Login;
+export default Register;
